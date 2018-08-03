@@ -41,6 +41,7 @@ class StupidPlayer(Player):
     """
 
     def pass_cards(self, hand):
+        print('pass cards ', str(hand[:3]))
         return hand[:3]
 
     def play_card(self, hand, trick, trick_nr, are_hearts_broken):
@@ -81,6 +82,7 @@ class SimplePlayer(Player):
 
     def pass_cards(self, hand):
         hand.sort(key=self.undesirability, reverse=True)
+        print('pass cards ', str(hand[:3]))
         return hand[:3]
 
     def play_card(self, hand, trick, trick_nr, are_hearts_broken):

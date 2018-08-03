@@ -27,4 +27,9 @@ def card_points(card):
     """
     Return the number of points given card is worth.
     """
-    return 1 if card.suit == Suit.hearts else 0 + 13 if card == Card(Rank.queen, Suit.spades) else 0
+    if card.suit == Suit.hearts:
+        return 1
+    elif card.suit == Suit.spades and card.rank == Rank.queen:
+        return 13
+    return 0
+    #return 1 if card.suit == Suit.hearts else 0 + 13 if card == Card(Rank.queen, Suit.spades) else 0
